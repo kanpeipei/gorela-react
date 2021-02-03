@@ -1,0 +1,103 @@
+@import "style/variable";
+@import "style/mixin";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 15px;
+  -webkit-appearance: none;
+
+
+  &:focus{
+    outline: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 2560px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  background-color: #ffffff;
+}
+
+main {
+  padding: 0 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea {
+  height: 2em;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $placeholder-color-1;
+  font-size: 12px;
+  background: linear-gradient($base-color, $base-color) 0 calc(100% + 1px) / 0px
+    1px no-repeat;
+  transition: background-size 0.5s;
+  resize: none;
+
+  @include mobile {
+    font-size: 8px;
+  }
+
+  &:focus {
+    outline: none;
+    background-size: 100% 1px;
+    border-bottom: 1px solid #00000000;
+  }
+
+  &::placeholder {
+    color: $placeholder-color-1;
+  }
+}
+
+button {
+  padding: 5px 10px;
+  border: 1px solid $base-color;
+  border-radius: 10px;
+  color: $base-color;
+  transition: 0.3s;
+  cursor: pointer;
+
+  @include mobile {
+    font-size: 10px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: $base-color;
+  }
+}
+
+.card {
+  box-shadow: 0px 0px 5px $shadow-color;
+  border-radius: 10px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opacity{
+  opacity: 0.7;
+}
+
+.isMenuVisible {
+  padding-left: 300px;
+}

@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
+import TopComponent from "./Top";
 
 ReactDOM.render(
-  <React.StrictMode>
-    
-  </React.StrictMode>,
+  <TopComponent />,
   document.getElementById('root')
 );
 
