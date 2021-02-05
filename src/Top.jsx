@@ -16,9 +16,9 @@ const TopComponent = () => {
           <h1>タスクの共有を<br />社内から世界へ</h1>
         </a>
         <div className="top-MainVisual_RightCards">
-          <a className="top-MainVisual_LoginCard card center">
+          <Link to="/login" className="top-MainVisual_LoginCard card center">
             ログイン
-          </a>
+          </Link>
           <a className="top-MainVisual_RegisterCard card center">
             新規登録
           </a>
