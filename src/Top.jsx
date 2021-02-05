@@ -19,9 +19,9 @@ const TopComponent = () => {
           <Link to="/login" className="top-MainVisual_LoginCard card center">
             ログイン
           </Link>
-          <a className="top-MainVisual_RegisterCard card center">
+          <Link to="/register" className="top-MainVisual_RegisterCard card center">
             新規登録
-          </a>
+          </Link>
         </div>
       </div>
     </div>
