@@ -9,6 +9,7 @@ import {
 import './index.scss';
 import TopComponent from "./Top";
 import LoginComponent from "./Login";
+import RegisterComponent from "./Register";
 
 const App = () => {
   return (
@@ -19,6 +20,9 @@ const App = () => {
         </Route>
         <Route path="/login">
           <LoginComponent />
+        </Route>
+        <Route path="/register">
+          <RegisterComponent />
         </Route>
       </Switch>
     </Router>

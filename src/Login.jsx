@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import './Login.scss';
 import LogoComponent from './Logo';
-import LoginErrorComponent from "./LoginError";
+import FormErrorComponent from "./FormError";
 import InputTextComponent from './InputText';
 import InputPasswordComponent from './InputPassword';
 import SubmitButtonComponent from "./SubmitButton";
@@ -12,7 +12,7 @@ const LoginComponent = () => {
   
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isRightUser, setIsRightUser] = useState(true);
+  const [isLoginError, setIsLoginError] = useState(false);
 
   const login = () => {
     const data = {
@@ -20,11 +20,14 @@ const LoginComponent = () => {
       password: password,
     };
 
+    //エラーの初期化
+    setIsLoginError(false);
+
     httpPost('login', data)
     .then((data) => {
       if(data.detail){
         if(data.detail[0] === "Unable to log in with provided credentials."){
-          setIsRightUser(false);
+          setIsLoginError(true);
           return;
         }
       }
@@ -42,7 +45,10 @@ const LoginComponent = () => {
           </Link>
         </div>
         <div className="login-Main_Border"></div>
-        <LoginErrorComponent isRightUser={isRightUser} />
+        <FormErrorComponent
+          isError={isLoginError}
+          errorSentence="ユーザーネーム、またはパスワードが間違っています。"
+        />
         <div className="login-Main_Form">
           <form>
             <InputTextComponent placeholder='ユーザーネーム' value={username} onChange={setUsername} />
