@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 import './Register.scss';
 import LogoComponent from './Logo';
@@ -8,7 +8,7 @@ import InputPasswordComponent from './InputPassword';
 import SubmitButtonComponent from "./SubmitButton";
 import httpPost from "./functions/http";
 
-const RegisterComponent = () => {
+const RegisterComponent = (props) => {
   
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -42,6 +42,7 @@ const RegisterComponent = () => {
       .then((data) => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user_id', data.user_id);
+        props.setIsLogin(true);
       });
     });
   }
