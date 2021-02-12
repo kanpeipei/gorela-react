@@ -1,6 +1,19 @@
 const apiUrl = "http://localhost:8000";
 
-const httpPost = (url, body) => {
+export const httpGet = (url) => {
+  return fetch(`${apiUrl}/${url}/`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  .then(res => res.json())
+  .catch((error) => {
+    console.error(error);
+  });
+}
+
+export const httpPost = (url, body={}) => {
   return fetch(`${apiUrl}/${url}/`, {
     method: 'POST',
     headers: {
@@ -14,4 +27,14 @@ const httpPost = (url, body) => {
   });
 }
 
-export default httpPost;
+export const httpDelete = (url) => {
+  return fetch(`${apiUrl}/${url}/`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+}
