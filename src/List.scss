@@ -1,0 +1,206 @@
+@import "./style/variable";
+.list-Container {
+  margin: 0 50px;
+  max-width: $post-max-width;
+
+  &_Item {
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 15px $shadow-color;
+    }
+
+    &:first-child{
+      margin-top: 50px;
+    }
+  }
+
+  .is-reach{
+    .list-Container_Title{
+      background-color: $reach-color;
+    }
+    .list-Container_Task{
+      .not-checked {
+        &::before {
+          border: 1px solid $reach-color;
+        }
+      }
+      .checked {
+        &::before {
+          color: $reach-color;
+        }
+      }
+    }
+    .is-currentuser{
+      &:hover{
+        border: 1px solid $reach-color;
+      }
+    }
+    .favorite{
+      color: $reach-color;
+    }
+  }
+
+  .is-achievement{
+    .list-Container_Title{
+      background-color: $achievement-color;
+    }
+    .list-Container_Task{
+      .not-checked {
+        &::before {
+          border: 1px solid $achievement-color;
+        }
+      }
+      .checked {
+        &::before {
+          color: $achievement-color;
+        }
+      }
+    }
+    .is-currentuser{
+      &:hover{
+        border: 1px solid $achievement-color;
+      }
+    }
+    .favorite{
+      color: $achievement-color;
+    }
+  }
+
+  &_Title {
+    height: 3em;
+    padding: 0 10px;
+    background-color: $base-color;
+    border-radius: 10px 10px 0 0;
+    h1 {
+      height: 100%;
+      color: white;
+      line-height: 3em;
+    }
+  }
+
+  &_Limit {
+    padding: 10px 20px;
+    p,
+    span {
+      font-size: 13px;
+      color: $sub-color;
+    }
+  }
+
+  &_Last{
+    position: relative;
+    padding: 5px 20px;
+    font-weight: bold;
+    width: 120px;
+    background-color: $reach-color;
+
+    p{
+      color: white;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      top: 4.5px;
+      left: 108px;
+      height: 23.334px;
+      width: 23.334px;
+      background-color: white;
+      transform: rotate(45deg);
+    }
+  }
+
+  &_Tasks {
+    padding: 30px;
+  }
+
+  &_Task {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+
+    .not-checked {
+      &::before {
+        position: absolute;
+        top: calc(50% - 8px);
+        left: 0;
+        height: 12px;
+        width: 12px;
+        border: 1px solid $base-color;
+        background-color: white;
+        content: "";
+      }
+    }
+
+    .checked {
+      &::before {
+        content: '\f00c';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: $base-color;
+        position: absolute;
+        top: calc(50% - 8px);
+        left: 0;
+      }
+    }
+  }
+
+  &_ItemBottom {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+    p {
+      font-size: 10px;
+      color: $sub-color;
+    }
+  }
+
+  &_Favorite {
+    padding: 10px 0;
+
+    p{
+      &:hover{
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &_ItemBottomRight{
+    display: flex;
+    flex: 1;
+    padding: 10px 0 10px 20px;
+  }
+
+  &_Comment {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 15px;
+    }
+    span{
+      font-size: 10px;
+      color: $sub-color;
+    }
+  }
+
+  &_Account {
+    margin-left: auto;
+    margin-right: 20px;
+
+    p{
+      &:hover{
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .favorite{
+    color: $base-color;
+  }
+}

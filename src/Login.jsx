@@ -6,7 +6,7 @@ import FormErrorComponent from "./FormError";
 import InputTextComponent from './InputText';
 import InputPasswordComponent from './InputPassword';
 import SubmitButtonComponent from "./SubmitButton";
-import httpPost from "./functions/http";
+import {httpPost} from "./functions/http";
 
 const LoginComponent = (props) => {
   
