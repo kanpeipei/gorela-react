@@ -23,26 +23,26 @@ const MenuComponent = (props) => {
           <LogoComponent />
         </div>
         <Link
-          to="create"
+          to="/create"
           className="menu-Container_Create card center"
         >
           <p>タスク作成</p>
         </Link>
         <div className="menu-Container_Items card">
           <Link
-            to="list"
+            to="/"
             className="menu-Container_Item center"
           >
             <p>リスト</p>
           </Link>
           <Link
-            to="ranking"
+            to="/ranking"
             className="menu-Container_Item center"
           >
             <p>人気</p>
           </Link>
           <Link
-            to="account"
+            to="/account"
             className="menu-Container_Item center"
           >
             <p>アカウント</p>

@@ -12,7 +12,9 @@ const App = () => {
 
   return (
     <Router>
-      {isLogin ? <LoggedInComponent setIsLogin={setIsLogin} /> : <LoggedOutComponent setIsLogin={setIsLogin} />}
+      {isLogin
+      ? <LoggedInComponent setIsLogin={setIsLogin} />
+      : <LoggedOutComponent setIsLogin={setIsLogin} />}
     </Router>
   )
 }

@@ -1,0 +1,76 @@
+@import "./style/variable";
+.comments-Container {
+  margin-bottom: 20px;
+
+  &_Create {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    form {
+      position: relative;
+    }
+
+    input {
+      padding-right: 50px;
+    }
+
+    button {
+      position: absolute;
+      right: 10px;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      color: $sub-color;
+
+      &:hover {
+        background: none;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &_Item {
+    margin-bottom: 20px;
+  }
+
+  &_Content {
+    padding: 20px 20px 0;
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  &_ItemBottom {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+    padding: 10px 0;
+    p {
+      font-size: 10px;
+      color: $sub-color;
+    }
+  }
+
+  &_Favorite {
+    margin-right: 20px;
+  }
+
+  &_Comment {
+    p {
+      font-size: 15px;
+    }
+  }
+
+  &_Account {
+    margin-left: auto;
+    margin-right: 20px;
+
+    p{
+      &:hover{
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+  }
+}

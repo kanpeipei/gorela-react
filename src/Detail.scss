@@ -1,0 +1,231 @@
+@import "./style/variable";
+.detail-Container {
+  margin: 100px 50px;
+  max-width: $post-max-width;
+
+  &_Item {
+    margin-bottom: 20px;
+    transition: 0.3s;
+  }
+
+  .is-reach{
+    .detail-Container_Title{
+      background-color: $reach-color;
+    }
+    .detail-Container_Task{
+      .not-checked {
+        &::before {
+          border: 1px solid $reach-color;
+        }
+      }
+      .checked {
+        &::before {
+          color: $reach-color;
+        }
+      }
+    }
+    .is-currentuser{
+      &:hover{
+        border: 1px solid $reach-color;
+      }
+    }
+    .favorite{
+      color: $reach-color;
+    }
+  }
+
+  .is-achievement{
+    .detail-Container_Title{
+      background-color: $achievement-color;
+    }
+    .detail-Container_Task{
+      .not-checked {
+        &::before {
+          border: 1px solid $achievement-color;
+        }
+      }
+      .checked {
+        &::before {
+          color: $achievement-color;
+        }
+      }
+    }
+    .is-currentuser{
+      &:hover{
+        border: 1px solid $achievement-color;
+      }
+    }
+    .favorite{
+      color: $achievement-color;
+    }
+  }
+
+  &_Title {
+    height: 3em;
+    padding: 0 10px;
+    background-color: $base-color;
+    border-radius: 10px 10px 0 0;
+    h1 {
+      height: 100%;
+      color: white;
+      line-height: 3em;
+    }
+  }
+
+  &_Delete{
+    margin-left: 20px;
+    cursor: pointer;
+    color: $sub-color;
+    transition: 0.3s;
+    
+    &::before{
+      content: "\f2ed";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+
+  &_Detail {
+    margin: 0 20px;
+    padding: 30px;
+    border-bottom: 1px solid $placeholder-color-1;
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  &_Limit {
+    padding: 10px 20px;
+    p,
+    span {
+      font-size: 13px;
+      color: $sub-color;
+    }
+  }
+
+  &_Last{
+    position: relative;
+    padding: 5px 20px;
+    font-weight: bold;
+    width: 120px;
+    background-color: $reach-color;
+
+    p{
+      color: white;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      top: 4.5px;
+      left: 108px;
+      height: 23.334px;
+      width: 23.334px;
+      background-color: white;
+      transform: rotate(45deg);
+    }
+  }
+
+  &_Tasks {
+    padding: 30px;
+  }
+
+  &_Task {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 2px;
+    height: 40px;
+    p{
+      line-height: 40px;
+    }
+
+    .not-checked {
+      &::before {
+        position: absolute;
+        top: calc(50% - 8px);
+        left: 5px;
+        height: 12px;
+        width: 12px;
+        border: 1px solid $base-color;
+        background-color: white;
+        content: "";
+      }
+    }
+
+    .checked {
+      &::before {
+        content: '\f00c';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: $base-color;
+        position: absolute;
+        left: 5px;
+      }
+    }
+  }
+
+  .is-currentuser{
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover{
+      border: 1px solid $base-color;
+    }
+  }
+
+  &_ItemBottom {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+    padding: 10px 0;
+    p {
+      font-size: 10px;
+      color: $sub-color;
+    }
+  }
+
+  &_Favorite {
+    margin-right: 20px;
+
+    p{
+      &:hover{
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &_Comment {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 15px;
+    }
+    span{
+      font-size: 10px;
+      color: $sub-color;
+    }
+  }
+
+  &_Account {
+    margin-left: auto;
+    margin-right: 20px;
+    transition: 0.3s;
+
+    p{
+      &:hover{
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .favorite{
+    color: $base-color;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 import './Post.scss';
-import {httpGet, httpPost, httpDelete} from "./functions/http";
+import {httpPost, httpDelete} from "./functions/http";
 
 const PostComponent = (props) => {
   const [favoStatus, setFavoStatus] = useState(false);
@@ -77,7 +77,7 @@ const PostComponent = (props) => {
   }
 
   return (
-    <div className={ItemClassName(post)} key={post.id}>
+    <div className={ItemClassName(post)}>
       <Link to={"/detail/" + post.id} className="list-Container_Inner">
         <div className="list-Container_Title">
           <h1>{post.title}</h1>

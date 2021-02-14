@@ -2,9 +2,12 @@ import React from 'react';
 import {
   Switch,
   Route,
+  Router,
+  Redirect,
 } from "react-router-dom";
 import MenuComponent from "./Menu";
 import ListComponent from "./List";
+import DetailComponent from "./Detail";
 
 const LoggedInComponent = (props) => {
   return (
@@ -12,8 +15,14 @@ const LoggedInComponent = (props) => {
       <MenuComponent setIsLogin={props.setIsLogin} />
       <div className="isMenuVisible">
         <Switch>
-          <Route path="/list">
+          <Route exact path="/">
             <ListComponent />
+          </Route>
+          <Route path="/detail/:id">
+            <DetailComponent />
+          </Route>
+          <Route path="*">
+            <Redirect to="/" />
           </Route>
         </Switch>
       </div>
