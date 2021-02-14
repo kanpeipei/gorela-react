@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 import TopComponent from "./Top";
 import LoginComponent from "./Login";
@@ -18,6 +19,9 @@ const LoggedOutComponent = (props) => {
       </Route>
       <Route path="/register">
         <RegisterComponent setIsLogin={props.setIsLogin} />
+      </Route>
+      <Route path="*">
+        <Redirect to="/" />
       </Route>
     </Switch>
   )
