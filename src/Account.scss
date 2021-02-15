@@ -1,0 +1,120 @@
+@import "./style/variable";
+.account-Container{
+  margin: 100px 50px;
+  max-width: $post-max-width;
+
+  &_MainInfo{
+    margin-bottom: 50px;
+    padding: 30px;
+  }
+
+  &_TopInfo{
+    display: flex;
+    padding: 10px 0;
+  }
+
+  &_Name{
+    flex: 1;
+    padding: 0 10px;
+    p{
+      font-size: 20px;
+    }
+  }
+
+  &_Edit{
+    padding: 0 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    &::before{
+      content: "\f4ff";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: $sub-color;
+      font-size: 20px;
+    }
+
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+
+  &_MiddleInfo{
+    display: flex;
+    padding: 30px 20px 10px;
+
+    & > div{
+      &:not(:first-child){
+        margin-left: 20px;
+      }
+
+      &:nth-child(4){
+        margin-left: auto;
+      }
+    }
+  }
+
+  &_PostCount{
+    text-align: center;
+    p{
+      font-size: 12px;
+    }
+  }
+
+  &_PostText{
+    p{
+      color: $sub-color;
+    }
+  }
+
+  &_FollowCount{
+    text-align: center;
+    p{
+      font-size: 12px;
+    }
+  }
+
+  &_FollowText{
+    p{
+      color: $sub-color;
+    }
+  }
+
+  &_FollowerCount{
+    text-align: center;
+    p{
+      font-size: 12px;
+    }
+  }
+
+  &_FollowerText{
+    p{
+      color: $sub-color;
+    }
+  }
+
+  &_FollowButton{
+    padding: 0 10px;
+    border: 1px solid $base-color;
+    border-radius: 20px;
+    line-height: 36px;
+    transition: 0.3s;
+
+    p{
+      color: $base-color;
+    }
+
+    &:hover{
+      background-color: $base-color;
+      cursor: pointer;
+
+      p{
+        color: white;
+      }
+    }
+  }
+
+  &_BottomInfo{
+    padding: 10px;
+  }
+
+}

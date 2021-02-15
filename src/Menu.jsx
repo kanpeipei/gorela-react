@@ -8,6 +8,7 @@ import './Menu.scss';
 import LogoComponent from "./Logo";
 
 const MenuComponent = (props) => {
+  const currentUserId = localStorage.getItem("user_id");
 
   const logout = () => {
     localStorage.removeItem('token');
@@ -42,7 +43,7 @@ const MenuComponent = (props) => {
             <p>人気</p>
           </Link>
           <Link
-            to="/account"
+            to={"/account/" + currentUserId}
             className="menu-Container_Item center"
           >
             <p>アカウント</p>

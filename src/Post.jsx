@@ -65,7 +65,7 @@ const PostComponent = (props) => {
 
 
   const ItemClassName = (post) => {
-    let className = "list-Container_Item card";
+    let className = "post-Container card";
     if(isReach(post)){
       className += " is-reach";
     }
@@ -78,11 +78,11 @@ const PostComponent = (props) => {
 
   return (
     <div className={ItemClassName(post)}>
-      <Link to={"/detail/" + post.id} className="list-Container_Inner">
-        <div className="list-Container_Title">
+      <Link to={"/detail/" + post.id} className="post-Container_Inner">
+        <div className="post-Container_Title">
           <h1>{post.title}</h1>
         </div>
-        <div className="list-Container_Limit">
+        <div className="post-Container_Limit">
           <p>
             期限&nbsp;:
               <span>{ post.limit }</span>
@@ -90,15 +90,15 @@ const PostComponent = (props) => {
         </div>
         {
           isReach(post)
-            ? <div className="list-Container_Last">
+            ? <div className="post-Container_Last">
               <p>Last One</p>
             </div>
             : null
         }
-        <div className="list-Container_Tasks">
+        <div className="post-Container_Tasks">
           {
             post.tasks.map((task) => (
-              <div className="list-Container_Task" key={task.id}>
+              <div className="post-Container_Task" key={task.id}>
                 {
                   task.is_done
                   ? <p className="checked opacity">{ task.content }</p>
@@ -109,24 +109,27 @@ const PostComponent = (props) => {
           }
         </div>
       </Link>
-      <div className="list-Container_ItemBottom">
-        <div className="list-Container_Favorite">
+      <div className="post-Container_ItemBottom">
+        <div className="post-Container_Favorite">
           {
             favoStatus
             ? <p onClick={() => deleteFavo(post)} className="favorite">いいね&nbsp;{favoLength}</p>
             : <p onClick={() => addFavo(post)}>いいね&nbsp;{favoLength}</p>
           }
         </div>
-        <Link to={"/detail/" + post.id} className="list-Container_ItemBottomRight" >
-          <div className="list-Container_Comment">
+        <Link to={"/detail/" + post.id} className="post-Container_ItemBottomRight" >
+          <div className="post-Container_Comment">
             <p className="far fa-comment-dots"></p>
             <span>&nbsp;{post.comments.length}</span>
           </div>
         </Link>
-        <Link to={"/account/ + post.user.id"} className="list-Container_Account">
+        {post.user ?
+        <Link to={"/account/" + post.user.id} className="post-Container_Account">
           <p>{post.user.username}</p>
         </Link>
-        <Link to={"/detail/" + post.id} className="list-Container_Date">
+        : null
+        }
+        <Link to={"/detail/" + post.id} className="post-Container_Date">
           <p>{ post.created_at }</p>
         </Link>
       </div>

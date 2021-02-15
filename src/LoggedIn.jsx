@@ -8,6 +8,7 @@ import {
 import MenuComponent from "./Menu";
 import ListComponent from "./List";
 import DetailComponent from "./Detail";
+import AccountComponent from "./Account";
 
 const LoggedInComponent = (props) => {
   return (
@@ -20,6 +21,9 @@ const LoggedInComponent = (props) => {
           </Route>
           <Route path="/detail/:id">
             <DetailComponent />
+          </Route>
+          <Route path="/account/:id">
+            <AccountComponent />
           </Route>
           <Route path="*">
             <Redirect to="/" />

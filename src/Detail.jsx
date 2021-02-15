@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link, useParams, useRouteMatch} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import './Detail.scss';
 import {httpGet, httpPost, httpDelete} from "./functions/http";
 import CommentComponent from "./Comment";
@@ -11,15 +11,11 @@ const DetailComponent = (props) => {
   const [post, setPost] = useState([]);
   const [favoStatus, setFavoStatus] = useState(false);
   const [favoLength, setFavoLength] = useState(0);
-  // let post = props.post;
   const currentUserId = localStorage.getItem("user_id");
   let {id} = useParams();
-  let { path, url } = useRouteMatch();
 
 
   useEffect(() => {
-    console.log(`path:${path}`);
-    console.log(`url:${url}`);
     httpGet(`posts/${id}`)
     .then((result) => {
       if(result.favorites){
