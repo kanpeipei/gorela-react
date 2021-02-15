@@ -1,0 +1,69 @@
+@import "./style/variable";
+@import "./style/mixin";
+.userEdit-Main {
+  height: 100vh;
+  &_Card {
+    position: relative;
+    height: 400px;
+    width: 500px;
+    padding: 60px 10px 0 60px;
+
+    @include mobile {
+      height: 300px;
+      width: 300px;
+      padding: 40px 50px;
+    }
+  }
+
+  &_Border {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    height: 100%;
+    width: 10px;
+    border-right: 1px solid $base-color;
+    border-left: 1px solid $base-color;
+
+    @include mobile {
+      left: 25px;
+      width: 7px;
+    }
+  }
+
+  &_Form {
+    height: 100%;
+    padding: 0 10%;
+
+    input {
+      margin-bottom: 5em;
+    }
+  }
+
+  &_Introduction{
+    margin-bottom: 50px;
+
+    textarea {
+      height: 10em;
+      padding: 7px;
+      border: 1px solid $placeholder-color-1;
+      background: none;
+      transition: 0.5s;
+
+      &:focus {
+        border-color: $base-color-light;
+      }
+    }
+  }
+
+  &_Button {
+    button {
+      color: $base-color;
+      background-color: #fff;
+      transition: 0.3s;
+      &:hover {
+        color: #fff;
+        background-color: $base-color;
+      }
+    }
+  }
+}
