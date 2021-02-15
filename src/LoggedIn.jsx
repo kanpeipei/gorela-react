@@ -9,6 +9,7 @@ import MenuComponent from "./Menu";
 import ListComponent from "./List";
 import DetailComponent from "./Detail";
 import AccountComponent from "./Account";
+import AccountEditComponent from "./AccountEdit";
 
 const LoggedInComponent = (props) => {
   return (
@@ -22,8 +23,11 @@ const LoggedInComponent = (props) => {
           <Route path="/detail/:id">
             <DetailComponent />
           </Route>
-          <Route path="/account/:id">
+          <Route exact path="/account/:id">
             <AccountComponent />
+          </Route>
+          <Route path="/account/edit/:id">
+            <AccountEditComponent />
           </Route>
           <Route path="*">
             <Redirect to="/" />
