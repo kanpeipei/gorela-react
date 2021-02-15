@@ -18,7 +18,6 @@ const AccountEditComponent = (props) => {
   useEffect(() => {
     httpGet(`users/${userId}/edit`)
     .then((result) => {
-      console.log(result);
       setUsername(result.username);
       setIntroduction(result.introduction);
     });
@@ -31,22 +30,12 @@ const AccountEditComponent = (props) => {
       introduction: introduction,
     };
 
-    // //エラーの初期化
-    // setIsLoginError(false);
-
     httpPut(`users/${userId}/edit`, user)
     .then((res) => {
       httpPost('login', {username: username, password:password})
       .then((data) => {
-        // if(data.detail){
-        //   if(data.detail[0] === "Unable to log in with provided credentials."){
-        //     setIsLoginError(true);
-        //     return;
-        //   }
-        // }
         localStorage.setItem('token', data.token);
         localStorage.setItem('user_id', data.user_id);
-        // props.setIsLogin(true);
       });
     })
 
