@@ -1,0 +1,131 @@
+@import "./style/variable";
+@import "./style/mixin";
+.create-Container {
+  &_Inner {
+    margin: 100px 100px 69px 100px;
+  }
+
+  &_Box {
+    margin-bottom: 50px;
+  }
+
+  &_Content {
+    padding: 10px 40px 40px 40px;
+  }
+
+  &_Title {
+    height: 70px;
+    width: 100%;
+    padding: 15px 30px 0 30px;
+    background-color: $base-color;
+    border-radius: 10px 10px 0 0;
+
+    input {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      background: linear-gradient(white, white) 0 calc(100%) / 0px 1px no-repeat;
+      border: none;
+
+      &:focus {
+        background-size: 100% 1px;
+      }
+    }
+
+    ::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &_Limit {
+    display: flex;
+    vertical-align: bottom;
+    margin-bottom: 30px;
+
+    * {
+      color: #657786;
+    }
+
+    input {
+      width: 150px;
+    }
+  }
+
+  &_InputTask {
+    position: relative;
+    padding: 20px 0;
+    margin-bottom: 20px;
+
+    input {
+      padding-right: 50px;
+    }
+
+    button {
+      position: absolute;
+      right: 10px;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      color: $sub-color;
+
+      &:hover {
+        background: none;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &_Tasks {
+    padding: 0 10px;
+    margin-bottom: 30px;
+  }
+
+  &_Task {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-bottom: 20px;
+
+    button {
+      position: absolute;
+      right: 10px;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      color: $sub-color;
+
+      &:hover {
+        background: none;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &_Checkbox {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border: 1px solid $base-color;
+  }
+
+  &_Detail {
+    padding: 30px 10px;
+    border-top: 1px solid $placeholder-color-1;
+
+    textarea {
+      height: 20em;
+      padding: 7px;
+      border: 1px solid $placeholder-color-1;
+      background: none;
+
+      &:focus {
+        border-color: $base-color-light;
+      }
+    }
+  }
+
+  &_Button {
+    padding-right: 20px;
+    text-align: right;
+  }
+}
