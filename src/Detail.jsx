@@ -139,7 +139,7 @@ const DetailComponent = (props) => {
                 <p className="far fa-comment-dots"></p>
                 <span>&nbsp;{post.comments.length}</span>
               </div>
-              <Link to={"/account/ + post.user.id"} className="detail-Container_Account">
+              <Link to={"/account/" + post.user.id} className="detail-Container_Account">
                 <p>{post.user.username}</p>
               </Link>
               <Link to={"/detail/" + post.id} className="detail-Container_Date">

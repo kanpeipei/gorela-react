@@ -10,6 +10,7 @@ import ListComponent from "./List";
 import DetailComponent from "./Detail";
 import AccountComponent from "./Account";
 import AccountEditComponent from "./AccountEdit";
+import CreateComponent from "./Create";
 
 const LoggedInComponent = (props) => {
   return (
@@ -28,6 +29,9 @@ const LoggedInComponent = (props) => {
           </Route>
           <Route path="/account/edit/:id">
             <AccountEditComponent />
+          </Route>
+          <Route path="/create">
+            <CreateComponent />
           </Route>
           <Route path="*">
             <Redirect to="/" />

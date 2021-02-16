@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Redirect} from "react-router-dom";
 import {useParams} from "react-router-dom";
 import './AccountEdit.scss';
 import FormErrorComponent from "./FormError";
@@ -14,6 +15,7 @@ const AccountEditComponent = (props) => {
   const [username, setUsername] = useState('');
   const [introduction, setIntroduction] = useState('');
   const [password, setPassword] = useState('');
+  const [redirectToAccount, setRedirectToAccount] = useState(false);
 
   useEffect(() => {
     httpGet(`users/${userId}/edit`)
@@ -36,34 +38,40 @@ const AccountEditComponent = (props) => {
       .then((data) => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('user_id', data.user_id);
+        setRedirectToAccount(true);
       });
     })
 
   }
 
-  return (
-    <div className="userEdit-Main center">
-      <div className="userEdit-Main_Card card">
-        <div className="userEdit-Main_Border"></div>
-        <div className="userEdit-Main_Form">
-          <form>
-            <div className="userEdit-Main_Name">
-              <InputTextComponent placeholder='ユーザーネーム' value={username} onChange={setUsername} />
-            </div>
-            <div className="userEdit-Main_Introduction">
-              <TextareaComponent placeholder='自己紹介' value={introduction} onChange={setIntroduction} />
-            </div>
-            <div className="userEdit-Main_Password">
-              <InputPasswordComponent placeholder='パスワードを入力してください。（必須）' value={password} onChange={setPassword} />
-            </div>
-            <div className="userEdit-Main_Button">
-              <SubmitButtonComponent text='編集完了' onClick={edit} />
-            </div>
-          </form>
+  if(redirectToAccount){
+    return <Redirect to={"/account/" + userId} />
+  }
+  else{
+    return (
+      <div className="userEdit-Main center">
+        <div className="userEdit-Main_Card card">
+          <div className="userEdit-Main_Border"></div>
+          <div className="userEdit-Main_Form">
+            <form>
+              <div className="userEdit-Main_Name">
+                <InputTextComponent placeholder='ユーザーネーム' value={username} onChange={setUsername} />
+              </div>
+              <div className="userEdit-Main_Introduction">
+                <TextareaComponent placeholder='自己紹介' value={introduction} onChange={setIntroduction} />
+              </div>
+              <div className="userEdit-Main_Password">
+                <InputPasswordComponent placeholder='パスワードを入力してください。（必須）' value={password} onChange={setPassword} />
+              </div>
+              <div className="userEdit-Main_Button">
+                <SubmitButtonComponent text='編集完了' onClick={edit} />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default AccountEditComponent;
